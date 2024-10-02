@@ -1,0 +1,29 @@
+{
+  "version": "1",
+  "credential": {
+    "accessKey": "${MINIO_ROOT_USER}",
+    "secretKey": "${MINIO_ROOT_PASSWORD}"
+  },
+  "region": "us-east-1",
+  "browser": "on",
+  "logger": {
+    "console": {
+      "level": "info",
+      "enable": true
+    },
+    "file": {
+      "level": "info",
+      "enable": false,
+      "filename": ""
+    }
+  },
+  "storageClass": {
+    "standard": "STANDARD",
+    "rrs": "REDUCED_REDUNDANCY"
+  },
+  "api": {
+    "requests": {
+      "max": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9001:9001"
+      - "9090:9090"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio-data:/data
+      - minio-config:/root/.minio
+    command: server /data --console-address :9090 --address :9001
+    restart: always
+
+volumes:
+  minio-data:
+  minio-config:

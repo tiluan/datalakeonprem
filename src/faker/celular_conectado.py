@@ -5,12 +5,8 @@ import io
 import sys
 import os
 
-# Add the parent directory of 'utils' to the Python path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
-utils_dir = os.path.join(parent_dir, 'utils')
-sys.path.append(utils_dir)
-
+# Adiciona minio_data_ingestion ao path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils'))
 from minio_data_ingestion import upload_to_minio
 
 def main():

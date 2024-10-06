@@ -13,9 +13,9 @@ def upload_to_minio(bucket_name, file_name):
     secret_key = os.getenv('MINIO_ROOT_PASSWORD')
 
     # Criar um cliente MinIO com a URL do MinIO, chave de acesso e chave secreta
-    minioClient = Minio('http://172.27.137.205:9090/',
-                        access_key=access_key,
-                        secret_key=secret_key,
+    minioClient = Minio('http://172.27.137.205:9090',
+                        access_key=os.getenv('AccessKey'),
+                        secret_key=os.getenv('SecretKey'),
                         secure=False)
 
     # Verificar se o bucket existe
